@@ -1,5 +1,5 @@
 {
-  "name": "hackacademy_ejemplo_mvc_sequelize",
+  "name": "ha_blog",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {

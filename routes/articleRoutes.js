@@ -13,4 +13,9 @@ router.get("/:id/editar", articleController.edit);
 router.get("/:id", articleController.update);
 router.get("/:id", articleController.destroy);
 
+router.get("/test", async (req, res) => {
+  const articles = await Article.findAll();
+  console.log(articles);
+  return res.json(articles);
+});
 module.exports = router;

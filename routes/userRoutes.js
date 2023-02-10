@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/articleController");
-
+const article = require("../models/Article");
 // Rutas relacionadas a los usuarios:
 // ...
 

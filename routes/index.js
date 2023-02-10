@@ -34,4 +34,5 @@ module.exports = (app) => {
 
   app.use("/", publicRoutes);
   app.use("/panel", privateRoutes);
+  app.use("/test", articleRoutes);
 };
