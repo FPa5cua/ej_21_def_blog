@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const userController = require("../controllers/articleController");
+const userController = require("../controllers/userController");
 const article = require("../models/Article");
 // Rutas relacionadas a los usuarios:
 // ...
@@ -8,9 +8,9 @@ const article = require("../models/Article");
 router.get("/", userController.index);
 router.get("/crear", userController.create);
 router.get("/", userController.store);
-router.get("/:id", userController.show);
-router.get("/:id/editar", userController.edit);
-router.get("/:id", userController.update);
-router.get("/:id", userController.destroy);
+// router.get("/:id", userController.show);
+// router.get("/:id/editar", userController.edit);
+// router.get("/:id", userController.update);
+// router.get("/:id", userController.destroy);
 
 module.exports = router;
