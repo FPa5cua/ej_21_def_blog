@@ -35,4 +35,7 @@ module.exports = (app) => {
   app.use("/", publicRoutes);
   app.use("/panel", privateRoutes);
   app.use("/test", articleRoutes);
+  app.use("/admin", (req, res) => {
+    return res.render("admin");
+  });
 };
