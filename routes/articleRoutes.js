@@ -9,14 +9,9 @@ const { Article } = require("../models");
 router.get("/", articleController.index);
 router.get("/crear", articleController.create);
 router.get("/", articleController.store);
-/* router.get("/:id", articleController.show);
-router.get("/:id/editar", articleController.edit);
-router.get("/:id", articleController.update);
-router.get("/:id", articleController.destroy);
- */
-router.get("/test", async (req, res) => {
-  const articles = await Article.findAll();
-  console.log(articles);
-  return res.json(articles);
-});
+router.get("/:id", articleController.show);
+// router.get("/:id/editar", articleController.edit);
+// router.get("/:id", articleController.update);
+// router.get("/:id", articleController.destroy);
+
 module.exports = router;

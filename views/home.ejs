@@ -25,15 +25,13 @@
       <div class="row">
         <div class="col d-flex justify-content-center">
           <div class="article">
-            <a href="/article" class="articleTitle">
-              <h1>noticia 1</h1>
-            </a>
-            <% for (const article of articles) {%>
+         
+               <% for (let i=0; i<articles.length; i++) {%>          
+            <a href="/articulos/<%= articles[i].id%>" class="articleTitle"><p><%= articles[i].title%></p></a> 
+              <img src="<%= articles[i].image%>" />
 
-            <p><%= article.title%></p>
-            <p><%= article.content%></p>
-
-            <% }%>
+               <% }%>
+     
           </div>
         </div>
       </div>
