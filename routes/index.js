@@ -7,6 +7,7 @@ const userRoutes = require("./userRoutes");
 const articleRoutes = require("./articleRoutes");
 const commentRoutes = require("./commentRoutes");
 const adminRoutes = require("./adminRoutes");
+const { Article } = require("../models");
 /**
  * Otra alternativa podría ser organizar las rutas según su nivel de
  * privacidad (ej: si son rutas públicas o privadas).

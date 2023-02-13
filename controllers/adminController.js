@@ -2,7 +2,11 @@ const { Article, Comment } = require("../models");
 
 // Display a listing of the resource.
 async function index(req, res) {
-  return res.render("admin");
+  const articles = await Article.findAll();
+
+  res.render("admin", {
+    articles: articles,
+  });
 }
 
 // Display the specified resource.
@@ -14,7 +18,9 @@ async function show(req, res) {
 }
 
 // Show the form for creating a new resource
-async function create(req, res) {}
+async function create(req, res) {
+  res.render("createArticle");
+}
 
 // Store a newly created resource in storage.
 async function store(req, res) {}
