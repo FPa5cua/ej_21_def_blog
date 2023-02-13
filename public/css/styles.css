@@ -26,7 +26,7 @@ a {
   text-decoration: none;
 }
 
-.articleTitle {
+.articleTitleHome {
   font-size: 2rem;
   font-family: "Bebas Neue", cursive;
   text-decoration: none;
@@ -46,6 +46,7 @@ a {
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
-.articleHomeImg {
-  height: 30%;
+
+.articleCard {
+  margin: 1.5rem, 2rem, 1.5rem, 2rem;
 }
