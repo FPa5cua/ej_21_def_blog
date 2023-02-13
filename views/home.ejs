@@ -27,11 +27,13 @@
               <div class="card mb-3">
                 <div class="card-body">
                   <h4 class="card-title">
-                    <%= articles[i].title%>
-                      <a href="/articulos/<%= articles[i].id%>" class="articleTitle"></a>
+
+                    <a href="/articulos/<%= articles[i].id%>" class="articleTitle">
+                      <%= articles[i].title%>
+                    </a>
                   </h4>
                   <p class="card-text">
-                    <%= articles[i].contentPreview%>
+                    <%= articles[i].content%>
                   </p>
                   <p class="card-text"><small class="text-muted">
                       <%= articles[i].createdAt%>
