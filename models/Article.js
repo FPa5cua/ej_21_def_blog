@@ -12,7 +12,7 @@ class Article extends Model {
         title: {
           type: DataTypes.STRING,
         },
-        content: {
+        contentPreview: {
           type: DataTypes.TEXT,
         },
         content: {
