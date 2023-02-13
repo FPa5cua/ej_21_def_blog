@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
-const article = require("../models/Article");
+const article = require("../models/Article").default;
 // Rutas relacionadas a los usuarios:
 // ...
 

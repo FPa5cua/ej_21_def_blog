@@ -12,6 +12,9 @@ class Article extends Model {
         title: {
           type: DataTypes.STRING,
         },
+        contentPreview: {
+          type: DataTypes.TEXT,
+        },
         content: {
           type: DataTypes.TEXT,
         },
