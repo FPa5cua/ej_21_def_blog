@@ -48,6 +48,20 @@ Article.belongsTo(User, {
   foreignKey: "authorId",
 });
 
+Article.hasMany(Comment, {
+  foreignKey: "articleId",
+});
+Comment.belongsTo(Article, {
+  foreignKey: "articleId",
+});
+
+User.hasMany(Comment, {
+  foreignKey: "authorId",
+});
+Comment.belongsTo(User, {
+  foreignKey: "authorId",
+});
+
 module.exports = {
   sequelize,
   User,
