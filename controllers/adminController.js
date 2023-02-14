@@ -57,7 +57,7 @@ async function update(req, res) {
     keepExtensions: true,
   });
   form.parse(req, async (err, fields, files) => {
-    return res.json(files);
+    //return res.json(files);
     await Article.create({
       title: fields.title,
       content: fields.content,
@@ -69,14 +69,7 @@ async function update(req, res) {
 }
 
 // Remove the specified resource from storage.
-async function destroy(req, res) {
-  await Article.destroy({
-    where: {
-      id: req.params.id,
-    },
-  });
-  return res.redirect("/admin");
-}
+async function destroy(req, res) {}
 
 // Otros handlers...
 // ...
