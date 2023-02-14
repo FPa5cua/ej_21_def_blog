@@ -13,44 +13,43 @@
 <body>
   <%- include("partials/navbar.ejs") %>
 
-    <section class="hero">
-      <h1 class="pageTitle">Hack the blog</h1>
-      <p>El Blog de Hack Academy</p>
-    </section>
-    <div class="container">
-      <div class="row">
-        <div class="col d-flex justify-content-center">
 
-          <div class="cardConteiner">
-            <% for (let i=0; i<articles.length; i++) {%>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col d-flex justify-content-center">
 
-              <div class="card mb-3">
-                <div class="card-body">
-                  <h4 class="card-title">
+            <div class="cardConteiner">
+              <% for (let i=0; i<articles.length; i++) {%>
 
-                    <a href="/articulos/<%= articles[i].id%>" class="articleTitleHome">
-                      <%= articles[i].title%>
-                    </a>
-                  </h4>
-                  <p class="card-text">
-                    <%= articles[i].contentPreview%>
-                  </p>
-                  <p class="card-text"><small class="text-muted">
-                      <%= articles[i].createdAt%>
-                    </small></p>
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <h4 class="card-title">
+
+                      <a href="/articulos/<%= articles[i].id%>" class="articleTitleHome">
+                        <%= articles[i].title%>
+                      </a>
+                    </h4>
+                    <p class="card-text">
+                      <%= articles[i].contentPreview%>
+                    </p>
+                    <p class="card-text"><small class="text-muted">
+                        <%= articles[i].createdAt%>
+                      </small></p>
+                  </div>
+                  <div class="card-footer">
+                    <h5>
+                      <%= articles[i].authorId%>
+                    </h5>
+                  </div>
                 </div>
-                <div class="card-footer">
-                  <h5>
-                    <%= articles[i].authorId%>
-                  </h5>
-                </div>
-              </div>
-              <%}%>
+                <%}%>
+            </div>
+
           </div>
-
         </div>
       </div>
-    </div>
+    </section>
 
 
 
