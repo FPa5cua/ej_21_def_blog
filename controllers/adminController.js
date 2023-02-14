@@ -69,7 +69,14 @@ async function update(req, res) {
 }
 
 // Remove the specified resource from storage.
-async function destroy(req, res) {}
+async function destroy(req, res) {
+  await Article.destroy({
+    where: {
+      id: req.params.id,
+    },
+  });
+  return res.redirect("/admin");
+}
 
 // Otros handlers...
 // ...
