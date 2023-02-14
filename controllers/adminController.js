@@ -44,11 +44,29 @@ async function store(req, res) {
 
 // Show the form for editing the specified resource.
 async function edit(req, res) {
-  return res.render("editArticle");
+  const idParams = req.params.id;
+  const articles = await Article.findByPk(idParams);
+  return res.render("editArticle", { idParams, articles });
 }
 
 // Update the specified resource in storage.
-async function update(req, res) {}
+async function update(req, res) {
+  const form = formidable({
+    multiples: true,
+    uploadDir: __dirname + "/../public/img",
+    keepExtensions: true,
+  });
+  form.parse(req, async (err, fields, files) => {
+    return res.json(files);
+    await Article.create({
+      title: fields.title,
+      content: fields.content,
+      authorId: fields.users,
+      image: files.image.newFilename,
+    });
+  });
+  res.render("/admin");
+}
 
 // Remove the specified resource from storage.
 async function destroy(req, res) {

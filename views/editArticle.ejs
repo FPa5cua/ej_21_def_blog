@@ -14,11 +14,11 @@
 <body>
     <%- include("partials/navbar.ejs") %>
         <div class="container">
-            <form class="container shadow mt-5 pb-3" action="/articulos" method="POST" enctype="multipart/form-data">
+            <form class="container shadow mt-5 pb-3" action="/admin" method="POST" enctype="multipart/form-data">
                 <legend>Editar el articulo</legend>
                 <div class="mb-3">
                     <label for="title" class="form-label">Titulo</label>
-                    <input type="text" value="" name="title" id="title" class="form-control"
+                    <input type="text" value="<%=articles.title%>" name="title" id="title" class="form-control"
                         placeholder="Ingresar titulo..." />
                 </div>
 
