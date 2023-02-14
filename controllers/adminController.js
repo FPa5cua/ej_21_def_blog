@@ -1,4 +1,5 @@
 const { Article, Comment } = require("../models");
+const formidable = require("formidable");
 
 // Display a listing of the resource.
 async function index(req, res) {
@@ -24,26 +25,31 @@ async function create(req, res) {
 
 // Store a newly created resource in storage.
 async function store(req, res) {
-  console.log(req.body);
+  const form = formidable({
+    multiples: true,
+    uploadDir: __dirname + "/../public/img",
+    keepExtensions: true,
+  });
+  form.parse(req, async (err, fields, files) => {
+    //return res.json(files);
+    await Article.create({
+      title: fields.title,
+      content: fields.content,
+      authorId: fields.users,
+      image: files.image.newFilename,
+    });
+    res.redirect("/admin");
+  });
 }
 
 // Show the form for editing the specified resource.
-async function edit(req, res) {
-  return res.render("editArticle");
-}
+async function edit(req, res) {}
 
 // Update the specified resource in storage.
 async function update(req, res) {}
 
 // Remove the specified resource from storage.
-async function destroy(req, res) {
-  await Article.destroy({
-    where: {
-      id: req.params.id,
-    },
-  });
-  return res.redirect("/admin");
-}
+async function destroy(req, res) {}
 
 // Otros handlers...
 // ...
